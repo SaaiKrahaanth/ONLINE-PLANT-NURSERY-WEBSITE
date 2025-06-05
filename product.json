@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Azalea",
+    "image": "PHOTOS/1AZALEYA.jpg",
+    "price": 25.99,
+    "description": "Azaleas are flowering shrubs that belong to the Rhododendron genus. They are known for their vibrant blooms and are often used in landscaping."
+  },
+  {
+    "id": 2,
+    "name": "Daisy",
+    "image": "PHOTOS/2DAISIES.jpg",
+    "price": 15.99,
+    "description": "Daisies are cheerful flowers with white petals and a yellow center. They symbolize purity and innocence and are often used in gardens and floral arrangements."
+  },
+  {
+    "id": 3,
+    "name": "Spider Lily",
+    "image": "PHOTOS/3 SPIDER LILY.jpg",
+    "price": 18.99,
+    "description": "Spider lilies are known for their unique, spider-like flowers. They bloom in late summer and are often associated with good fortune in some cultures."
+  },
+  {
+    "id": 4,
+    "name": "Hydrangea",
+    "image": "PHOTOS/4 HYDRANGEA.jpg",
+    "price": 22.99,
+    "description": "Hydrangeas are popular flowering shrubs with large, round flower clusters. They come in various colors and are often used in gardens and floral arrangements."
+  },
+  {
+    "id": 5,
+    "name": "Lotus",
+    "image": "PHOTOS/5 LOTUS  copy.jpg",
+    "price": 30.99,
+    "description": "Lotus flowers are aquatic plants known for their beautiful, large blooms. They are often associated with purity and enlightenment in various cultures."
+  },
+  {
+    "id": 6,
+    "name": "Hibiscus",
+    "image": "PHOTOS/6 HIBISCUS.jpg",
+    "price": 19.99,
+    "description": "Hibiscus flowers are large, showy blooms that come in various colors. They are often used in tropical gardens and can also be made into herbal teas."
+  },
+  {
+    "id": 7,
+    "name": "Sunflower",
+    "image": "PHOTOS/7 SUNFLOWER.jpg",
+    "price": 12.99,
+    "description": "Sunflowers are tall, bright yellow flowers that follow the sun. They symbolize adoration and loyalty and are often used in gardens and as cut flowers."
+  },
+  {
+    "id": 8,
+    "name": "Rose",
+    "image": "PHOTOS/8 ROSE.jpg",
+    "price": 29.99,
+    "description": "Roses are classic flowers known for their beauty and fragrance. They come in various colors and are often associated with love and romance."
+  },
+  {
+    "id": 9,
+    "name": "Blue berry Flower",
+    "image": "PHOTOS/9 BLUE BERRY FLOWERS.jpg",
+    "price": 14.99,
+    "description": "Blueberry flowers are small, white to pink blooms that eventually produce blueberries. They are often found in gardens and orchards."
+  }
+]
