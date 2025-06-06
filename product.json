@@ -61,5 +61,13 @@
     "image": "PHOTOS/9 BLUE BERRY FLOWERS.jpg",
     "price": 14.99,
     "description": "Blueberry flowers are small, white to pink blooms that eventually produce blueberries. They are often found in gardens and orchards."
+  },
+  {
+    "id": 10,
+    "name": "Aquatic Rose",
+    "image": "PHOTOS/10 AQUATIC ROSE.jpg",
+    "price": 17.99,
+    "description": "Aquatic roses are unique flowers that thrive in water. They have delicate petals and are often used in water gardens and floral arrangements."
   }
+
 ]
