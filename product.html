@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products - Online Plant Nursery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: hwb(140 98% 1%);
+    }
+    .card img {
+      height: 400px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .navbar {
+      background-color: #d4edda !important;
+    }
+    .navbar-brand {
+      color: #599c5c !important;
+    }
+    h2,
+    .lead {
+      color: #052c5a;
+    }
+    .btn-success {
+      background-color: #2e7d32;
+      border-color: #2e7d32;
+    }
+    .cart-badge {
+      background-color: #c13718;
+      color: white;
+      position: absolute;
+      top: 0;
+      right: 0px;
+      padding: 2px 6px;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+    .cart-btn {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-success" href="#">ONLINE PLANT NURSERY</a>
+      <div class="d-flex align-items-center ms-auto">
+        <div class="cart-btn me-2">
+          <button id="cartBtn" class="btn btn-outline-success position-relative">
+            🛒 Cart <span id="cartCount" class="cart-badge">0</span>
+          </button>
+        </div>
+        <a href="checkout.html" class="btn btn-success me-3" id="checkoutBtn">Checkout</a>
+        <a href="login.html" class="btn btn-success" id="loginBtn">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Welcome Section -->
+  <div class="container mt-4">
+    <h2 class="mb-4">Welcome to Online Nursery Store</h2>
+    <p id="welcomeUser" class="lead"></p>
+    <div class="row" id="productlist"></div>
+  </div>
+
+  <!-- Admin Dashboard-style Product List Section -->
+  <div class="container mt-4">
+    <h2 class="mb-4">Product List</h2>
+    <div class="row" id="productList"></div>
+  </div>
+
+  <script>
+    // User login check
+    const user = localStorage.getItem("user");
+    const welcomeUser = document.getElementById("welcomeUser");
+    const loginBtn = document.getElementById("loginBtn");
+    const cartBtn = document.getElementById("cartBtn");
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    if (user) {
+      welcomeUser.textContent = `Hello, ${user}! Enjoy shopping.`;
+      loginBtn.textContent = "Logout";
+      loginBtn.href = "#";
+      loginBtn.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        window.location.reload();
+      });
+    } else {
+      welcomeUser.textContent = "Please login to access cart and checkout features.";
+      loginBtn.textContent = "Login";
+      loginBtn.href = "login.html";
+    }
+
+    function requireLoginRedirect(e) {
+      if (!user) {
+        e.preventDefault();
+        alert("Please login to access this feature.");
+        window.location.href = "login.html";
+      }
+    }
+    cartBtn.addEventListener("click", requireLoginRedirect);
+    checkoutBtn.addEventListener("click", requireLoginRedirect);
+
+    // Load products into first grid (like userdashboard)
+    fetch("products.json")
+      .then(response => response.json())
+      .then(products => {
+        const productList = document.getElementById("productlist");
+        products.forEach(product => {
+          const col = document.createElement("div");
+          col.className = "col-md-4 mb-4";
+          col.innerHTML = `
+            <div class="card h-100">
+              <img src="${product.image}" class="card-img-top" alt="${product.name}" />
+              <div class="card-body">
+                <h5 class="card-title">${product.name}</h5>
+                <p class="card-text">${product.description}</p>
+                <p class="card-text text-success fw-bold">$${product.price.toFixed(2)}</p>
+              </div>
+            </div>
+          `;
+          productList.appendChild(col);
+        });
+      })
+
+
+.catch(err => {
+  console.error("Error loading user product list:", err);
+  document.getElementById("productlist").style.display = "none";
+});
+
+    // Load products into second section (like admin-dashboard)
+    fetch("product.json")
+      .then(response => response.json())
+      .then(products => {
+        const productList2 = document.getElementById("productList");
+        products.forEach(product => {
+          const col = document.createElement("div");
+          col.className = "col-md-4 mb-4";
+          col.innerHTML = `
+            <div class="card h-100">
+              <img src="${product.image}" class="card-img-top" alt="${product.name}">
+              <div class="card-body">
+                <h5 class="card-title">${product.name}</h5>
+                <p class="card-text">${product.description}</p>
+                <p class="card-text text-success fw-bold">$${product.price.toFixed(2)}</p>
+              </div>
+            </div>
+          `;
+          productList2.appendChild(col);
+        });
+      })
+      .catch(error => console.error("Error loading products:", error));
+  </script>
+</body>
+</html>
