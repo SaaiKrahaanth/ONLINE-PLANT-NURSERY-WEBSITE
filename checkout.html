@@ -12,6 +12,13 @@
         .navbar {
             background-color: #d4edda !important;
         }
+        .card img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
         .navbar-brand {
             color: #599c5c !important;
         }
@@ -35,7 +42,7 @@
 
     <div class="container mt-5">
         <h2 class="text-center">Your Cart</h2>
-        <div id="cartItems" class="col"></div>
+        <div id="cartItems" class="row"></div>
         <h4 class="text-end">Total: $<span id="totalAmount">0</span></h4>
         <button class="btn btn-danger mt-3" onclick="clearCart()" id="clearCartBtn">Clear Cart</button>
     </div>
