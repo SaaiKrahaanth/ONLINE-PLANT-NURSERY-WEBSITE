@@ -5,9 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Document</title>
+    <title>admindashboard</title>
 </head>
 <body>
+    <style>     
+        body {
+    background-color: hwb(140 98% 1%);
+}
+
+.card img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.navbar {
+    background-color: #d4edda !important;
+}
+.navbar-brand {
+    color: #599c5c !important;
+}
+h2 {
+    color: #052c5a;
+}
+
+.btn-success {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+}
+
+
+    </style>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold text-success" href="INDEX.HTML">ONLINE PLANT NURSERY</a>
@@ -16,6 +45,13 @@
             </div>  
         </div>
     </nav>
+<div class="container mt-4">
+    <h2 class="mb-4">Product List</h2>
+    <div class="row" id="productList"></div>
+</div>
+
+<script src="js/admindashboard.js"></script>
+
     
 </body>
 </html>

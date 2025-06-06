@@ -1,6 +1,6 @@
 //Load product list
 
-fetch("products.json")
+fetch("product.json")
     .then(response => response.json())
     .then(products => {
         const productList = document.getElementById("productList");
